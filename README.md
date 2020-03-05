@@ -9,7 +9,7 @@ By default the `<VideoPlayer>` accepts a navigator property from React's built-i
 By default, tapping the screen anywhere will show the player controls. After 10s the controls disappear. Double tapping will toggle fullscreen.
 
 ## Installation
-Run `npm install --save react-native-video react-native-video-enhanced`
+Run `npm install --save react-native-video react-native-video-enhanced @react-native-community/slider`
 
 Then run `react-native link react-native-video`
 
