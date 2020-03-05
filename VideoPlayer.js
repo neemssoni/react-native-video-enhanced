@@ -912,9 +912,6 @@ export default class VideoPlayer extends Component {
         const backControl = this.props.disableBack ? this.renderNullControl() : this.renderBack();
         // const volumeControl = this.props.disableVolume ? this.renderNullControl() : this.renderVolume();
         const fullscreenControl = this.props.disableFullscreen ? this.renderNullControl() : this.renderFullscreen();
-        const playPauseControl = this.props.disablePlayPause ? this.renderNullControl() : this.renderPlayPause();
-        const forwardControl = this.renderForward()
-        const rewindControl = this.renderRewind()
 
         return(
             <Animated.View style={[
@@ -928,20 +925,13 @@ export default class VideoPlayer extends Component {
                     source={ require( './assets/img/top-vignette.png' ) }
                     style={[ styles.controls.column ]}
                     imageStyle={[ styles.controls.vignette ]}>
-                    <SafeAreaView style={styles.controls.topControlGroupOne}>
-                        <View style={{flexDirection: 'row'}}>
+                    <SafeAreaView style={styles.controls.topControlGroup}>
                       {backControl}
                       {this.renderTitle()}
-                     
                       <View style={styles.controls.pullRight}>
                          
                         {/* {volumeControl} */}
                         {fullscreenControl}
-                      </View> </View>
-                      <View style={{flexDirection: 'row'}}>
-                      {rewindControl}
-                      {playPauseControl}
-                      {forwardControl}
                       </View>
                     </SafeAreaView>
                 </ImageBackground>
@@ -1158,38 +1148,10 @@ export default class VideoPlayer extends Component {
         return null;
     }
 
-    renderPlayPauseSkip() {
-        const playPauseControl = this.props.disablePlayPause ? this.renderNullControl() : this.renderPlayPause();
-        const forwardControl = this.renderForward()
-        const rewindControl = this.renderRewind()
-            return (
-                <View style={ styles.loader.container }>
-                 {playPauseControl}
-                      {forwardControl}
-                      {rewindControl}
-            </View>
-                // <ImageBackground
-                //     source={ require( './assets/img/top-vignette.png' ) }
-                //     style={[ styles.controls.column ]}
-                //     imageStyle={[ styles.controls.vignette ]}>
-                //     <SafeAreaView style={styles.controls.topControlGroup}>
-                //       {playPauseControl}
-                //       {forwardControl}
-                //       {rewindControl}
-                //     </SafeAreaView>
-                // </ImageBackground>
-            );
-    }
 
     renderError() {
         if ( this.state.error ) {
             return (
-                // <View style={ styles.error.container }>
-                //     <Image source={ require( './assets/img/error-icon.png' ) } style={ styles.error.icon } />
-                //     <Text style={ styles.error.text }>
-                //         Video unavailable
-                //     </Text>
-                // </View>
                 <View />
             );
         }
@@ -1228,8 +1190,7 @@ export default class VideoPlayer extends Component {
                     />
                     { this.renderError() }
                     { this.renderTopControls() }
-                    {/* {this.renderPlayPauseSkip()} */}
-                    { this.state.loading ? this.renderLoader() : this.renderPlayPauseSkip()}
+                    { this.renderLoader() }
                     { this.renderBottomControls() }
                 </View>
             </TouchableHighlight>
@@ -1347,15 +1308,6 @@ const styles = {
             alignItems: 'center',
             justifyContent: 'space-between',
             flexDirection: 'row',
-            width: null,
-            margin: 12,
-            marginBottom: 18,
-        },
-        topControlGroupOne: {
-            alignSelf: 'stretch',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            flexDirection: 'column',
             width: null,
             margin: 12,
             marginBottom: 18,
