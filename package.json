@@ -1,0 +1,29 @@
+{
+  "name": "react-native-video-enhanced",
+  "version": "1.0.0",
+  "description": "enhanced version of react-native-video to support more interactive video controls on Android and iOS",
+  "main": "VideoPlayer.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/neemssoni/react-native-video-enhanced.git"
+  },
+  "keywords": [
+    "react-native-video",
+    "react-native",
+    "video-controls"
+  ],
+  "author": "Neelam Soni <neemssoni@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/neemssoni/react-native-video-enhanced/issues"
+  },
+  "homepage": "https://github.com/neemssoni/react-native-video-enhanced#readme"
+}
