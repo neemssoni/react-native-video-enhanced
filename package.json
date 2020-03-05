@@ -21,7 +21,7 @@
     "video-controls"
   ],
   "author": "Neelam Soni <neemssoni@gmail.com>",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/neemssoni/react-native-video-enhanced/issues"
   },
