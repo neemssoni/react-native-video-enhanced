@@ -18,7 +18,6 @@ export const ProgressBar = ({
   }
 
   function handleOnSlide(time) {
-    console.log("seektime,", time);
     onSlideCapture({ seekTime: parseInt(time) });
   }
 

@@ -41,7 +41,6 @@ export default class VideoPlayer extends Component {
 
     constructor( props ) {
         super( props );
-        console.log("videoplayer",props);
         /**
          * All of our values that are updated by the
          * methods and listeners in this class
